@@ -1,8 +1,8 @@
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler020 extends App {
-  val answer = getDigits(factorial(100)).sum
+  val answer = 100.factorial.getDigits.sum
   println(answer)
 }

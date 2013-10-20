@@ -1,11 +1,11 @@
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler036 extends App {
   
   def isDoublePalindrome(n:BigInt) = 
-    isPalindrome(n) && isPalindrome(toBinary(n))
+    n.isPalindrome && n.toBinary.isPalindrome
   
   val nums = (1 to 1000000).filter(isDoublePalindrome(_))
   

@@ -1,6 +1,6 @@
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler037 extends App {
   
@@ -8,12 +8,12 @@ object Euler037 extends App {
     var num1 = n
     var num2 = n
     while (num1.toString.length > 1) {
-      if (!isPrime(num1) || !isPrime(num2)) 
+      if (!num1.isPrime || !num2.isPrime)
         return false
       num1 = num1.toString.drop(1).toInt
       num2 = num2.toString.dropRight(1).toInt
     }
-    isPrime(num1) && isPrime(num2)
+    num1.isPrime && num2.isPrime
   }
   
   val x = (10 to 1000000).filter(isTruncatablePrime(_)).sum

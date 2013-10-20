@@ -1,10 +1,10 @@
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler032 extends App {
   def process(x:Int, y:Int) = 
-    if (isPandigit(""+x+y+(x*y),9)) 
+    if ((""+x+y+(x*y)).isPandigit(9))
       x*y 
     else 
       0
