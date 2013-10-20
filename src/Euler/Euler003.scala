@@ -8,15 +8,14 @@ What is the largest prime factor of the number 600851475143 ?
 
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler003 extends App {
-  var n = 600851475143L
-  var x = 3L
-  //600851475143L
-  while (x <= (n/2L)+1L) {
+  var n = BigInt("600851475143")
+  var x = BigInt(3)
+  while (x <= (n/2)+1) {
     if (n % x == 0)
-      if (isPrime(x)) 
+      if (x.isPrime)
         println(x)
     x = x + 2
   }

@@ -16,11 +16,11 @@ terms.
 
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler002 extends App {
   val fibs = (1 to 35)
-    .map(fib(_)) 
+    .map(_.fib)
     .filter(_ % 2 == 0)
     .filter(_ <= 4000000)
     .sum

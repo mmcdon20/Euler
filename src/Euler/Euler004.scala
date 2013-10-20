@@ -10,12 +10,12 @@ of two 3-digit numbers.
 */
 package Euler
 
-import Util.Common._
+import Util.Implicit._
 
 object Euler004 extends App {
   var xs:List[Int] = Nil
    
-  for (i <- 100 to 999; j <- 100 to 999; if (isPalindrome(i*j)))
+  for (i <- 100 to 999; j <- 100 to 999; if ((i*j).isPalindrome))
     xs = (i*j) :: xs
     
   println(xs max)
