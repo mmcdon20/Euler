@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler036 extends Application {
+object Euler036 extends App {
   
   def isDoublePalindrome(n:BigInt) = 
     isPalindrome(n) && isPalindrome(toBinary(n))

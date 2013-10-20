@@ -10,7 +10,7 @@ package Euler
 
 import Util.Common._
 
-object Euler003 extends Application {
+object Euler003 extends App {
   var n = 600851475143L
   var x = 3L
   //600851475143L

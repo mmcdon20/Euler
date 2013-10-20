@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler030 extends Application {
+object Euler030 extends App {
   
   def isSumOfDigitsOfPow(n:BigInt,p:Int):Boolean = 
     n == getDigits(n).map(_.pow(p)).sum

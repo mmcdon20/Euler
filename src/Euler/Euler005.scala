@@ -12,7 +12,7 @@ evenly divisible by all of the numbers from
 
 package Euler
 
-object Euler005 extends Application {
+object Euler005 extends App {
   def isDivisible(i:Int):Boolean = {
     for (j <- 1 to 20)
       if (i % j != 0)

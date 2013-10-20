@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler037 extends Application {
+object Euler037 extends App {
   
   def isTruncatablePrime(n:BigInt):Boolean = {
     var num1 = n

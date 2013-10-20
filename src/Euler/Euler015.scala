@@ -1,6 +1,6 @@
 package Euler
 
-object Euler015 extends Application {
+object Euler015 extends App {
 
   def pathCount(n:Int):BigInt = {
     var grid = Array.ofDim[BigInt](n+1, n+1)

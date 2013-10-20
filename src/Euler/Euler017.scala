@@ -1,6 +1,6 @@
 package Euler
 
-object Euler017 extends Application {
+object Euler017 extends App {
   val ones = Map(
     1 -> "One",
     2 -> "Two",

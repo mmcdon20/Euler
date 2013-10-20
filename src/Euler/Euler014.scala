@@ -1,6 +1,6 @@
 package Euler
 
-object Euler014 extends Application {
+object Euler014 extends App {
   
   def collatz(n:BigInt, c:BigInt = 0):BigInt = n match {
     case n if (n == 1)     => c + 1 

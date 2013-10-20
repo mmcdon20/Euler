@@ -1,6 +1,6 @@
 package Euler
 
-object Euler008 extends Application {
+object Euler008 extends App {
     
   val nums:List[Int] = 
     """

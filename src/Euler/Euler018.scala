@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler018 extends Application {
+object Euler018 extends App {
   val triangle = 
     """|75
        |95 64

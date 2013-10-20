@@ -1,6 +1,6 @@
 package Euler
 
-object Euler043 extends Application {
+object Euler043 extends App {
   
   def isSubDivisible(s:String) = {
     if      (s.substring(1, 4).toInt %  2 != 0) false

@@ -18,7 +18,7 @@ package Euler
 
 import Util.Common._
 
-object Euler002 extends Application {
+object Euler002 extends App {
   val fibs = (1 to 35)
     .map(fib(_)) 
     .filter(_ % 2 == 0)

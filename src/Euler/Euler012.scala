@@ -1,6 +1,6 @@
 package Euler
 
-object Euler012 extends Application {
+object Euler012 extends App {
   
   def tri(n:Long) = (1L to n).sum 
   def div(n:Long) = (1L to n).filter(n%_==0L).length 

@@ -1,6 +1,6 @@
 package Euler
 
-object Euler022 extends Application {
+object Euler022 extends App {
   
   def getValue(s:String):Int = s.toCharArray.map(_.toInt-64).sum
   

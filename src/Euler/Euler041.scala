@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler041 extends Application {
+object Euler041 extends App {
   val pandigits3 = (123 to 321).filter(x => isPandigit(x.toString,3))
   val pandigits4 = (1234 to 4321).filter(x => isPandigit(x.toString,4))
   val pandigits5 = (12345 to 54321).filter(x => isPandigit(x.toString,5))

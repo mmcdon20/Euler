@@ -2,7 +2,7 @@ package Euler
 
 import Util.Common._
 
-object Euler011 extends Application {
+object Euler011 extends App {
   val grid:Array[List[Int]] = 
     """
       08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
