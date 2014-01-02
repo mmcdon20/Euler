@@ -1,7 +1,6 @@
 package Euler
 
-import main.util.Implicit
-import Implicit._
+import main.util.Implicit._
 
 object Euler041 extends App {
   val range     = (123 to 321) ++ (1234 to 4321) ++ (12345 to 54321) ++ (123456 to 654321) ++ (1234567 to 7654321)

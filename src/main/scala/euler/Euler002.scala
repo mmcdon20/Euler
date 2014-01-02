@@ -16,8 +16,7 @@ terms.
 
 package Euler
 
-import main.util.Implicit
-import Implicit._
+import main.util.Implicit._
 
 object Euler002 extends App {
   val fibs = (1 to 35)

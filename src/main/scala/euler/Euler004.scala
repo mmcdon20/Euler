@@ -10,8 +10,7 @@ of two 3-digit numbers.
 */
 package Euler
 
-import main.util.Implicit
-import Implicit._
+import main.util.Implicit._
 
 object Euler004 extends App {
   var xs:List[Int] = Nil

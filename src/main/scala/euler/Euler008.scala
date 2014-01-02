@@ -1,8 +1,7 @@
 package Euler
 
 import scala.io.Source
-import main.util.Implicit
-import Implicit._
+import main.util.Implicit._
 
 object Euler008 extends App {
   val file = Source.fromFile("data/8.txt")
