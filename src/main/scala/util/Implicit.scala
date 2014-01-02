@@ -1,4 +1,4 @@
-package Util
+package main.util
 
 object Implicit {
   implicit def wrapChar(c:Char) = {

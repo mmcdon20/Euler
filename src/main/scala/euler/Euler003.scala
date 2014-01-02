@@ -8,7 +8,8 @@ What is the largest prime factor of the number 600851475143 ?
 
 package Euler
 
-import Util.Implicit._
+import main.util.Implicit
+import Implicit._
 
 object Euler003 extends App {
   var n = BigInt("600851475143")

@@ -1,10 +1,11 @@
 package Euler
 
 import scala.io.Source
-import Util.Implicit._
+import main.util.Implicit
+import Implicit._
 
 object Euler008 extends App {
-  val file = Source.fromFile("src/Data/8.txt")
+  val file = Source.fromFile("data/8.txt")
   val nums = file.toList.filter(_.isDigit).map(_.toDigit)
     
   // solution 1

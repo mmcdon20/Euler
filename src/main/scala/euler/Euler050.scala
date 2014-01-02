@@ -1,6 +1,7 @@
 package Euler
 
-import Util.Common._
+import main.util.Common
+import Common._
 
 object Euler050 extends App {
   
