@@ -1,4 +1,4 @@
-package Euler
+package euler
 
 object Euler017 extends App {
   val ones = Map(

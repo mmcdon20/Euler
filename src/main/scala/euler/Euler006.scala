@@ -1,4 +1,4 @@
-package Euler
+package euler
 
 object Euler006 extends App {
   val A = (1 to 100).map(Math.pow(_, 2)).sum

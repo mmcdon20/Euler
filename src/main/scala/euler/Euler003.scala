@@ -6,7 +6,7 @@ What is the largest prime factor of the number 600851475143 ?
 
  */
 
-package Euler
+package euler
 
 import main.util.Implicit._
 

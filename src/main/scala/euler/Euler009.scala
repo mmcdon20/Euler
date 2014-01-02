@@ -1,4 +1,4 @@
-package Euler
+package euler
 
 object Euler009 extends App {
   for (a <- 1 to 1000; b <- 1 to 1000; c <- 1 to 1000)

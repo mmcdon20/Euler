@@ -1,4 +1,4 @@
-package Euler
+package euler
 
 import scala.io.Source
 import main.util.Implicit._

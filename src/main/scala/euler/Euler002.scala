@@ -14,7 +14,7 @@ terms.
 
 */
 
-package Euler
+package euler
 
 import main.util.Implicit._
 

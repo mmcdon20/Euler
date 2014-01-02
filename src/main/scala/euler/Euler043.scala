@@ -1,4 +1,4 @@
-package Euler
+package euler
 
 object Euler043 extends App {
   

@@ -10,7 +10,7 @@ How many different ways can £2 be made using any number of coins?
 
 */
 
-package Euler
+package euler
 
 object Euler031 extends App {
   // with for comprehension
