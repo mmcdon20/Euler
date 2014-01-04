@@ -10,5 +10,5 @@ object Euler015 extends App {
     grid(n)(n)
   }
   
-  print(pathCount(20))
+  println(pathCount(20))
 }
