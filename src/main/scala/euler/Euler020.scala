@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Implicit._
+import util.Implicit._
 
 object Euler020 extends App {
   val answer = 100.factorial.getDigits.sum

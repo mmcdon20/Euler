@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Common._
+import util.Common._
 
 object Euler025 extends App {
   def count(n: Int = 1): Int =

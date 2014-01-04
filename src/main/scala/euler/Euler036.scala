@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Implicit._
+import util.Implicit._
 
 object Euler036 extends App {
   

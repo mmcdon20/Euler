@@ -3,7 +3,7 @@ package euler
 import scala.io.Source
 
 object Euler011 extends App {
-  val file = Source.fromFile("data/11.txt").getLines
+  val file = Source.fromFile("src/main/resources/11.txt").getLines
   val grid:List[Array[Int]] = file.toList.map(_.split(" ").map(_.toInt))
 
   def get(x:Int, y:Int) =

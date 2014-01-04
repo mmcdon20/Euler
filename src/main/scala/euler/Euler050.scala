@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Common._
+import util.Common._
 
 object Euler050 extends App {
   
@@ -8,5 +8,5 @@ object Euler050 extends App {
   
   // incomplete
   
-  primes foreach println
+  //primes foreach println
 }

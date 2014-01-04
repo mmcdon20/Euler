@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Implicit._
+import util.Implicit._
 
 object Euler034 extends App {
   def isSumOfFactDigits(n:BigInt) = n == n.getDigits.map(_.factorial).sum

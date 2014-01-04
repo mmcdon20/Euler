@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Implicit._
+import util.Implicit._
 
 object Euler032 extends App {
   def process(x:Int, y:Int) = 

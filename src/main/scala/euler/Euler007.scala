@@ -1,6 +1,6 @@
 package euler
 
-import main.util.Implicit._
+import util.Implicit._
 
 object Euler007 extends App {
   def primeCount(n:BigInt,c:Int):BigInt = n match {
