@@ -1,14 +1,10 @@
 package euler
 
-import util.Implicit._
-
 object Euler003 extends App {
-  var n = BigInt("600851475143")
-  var x = BigInt(3)
-  while (x <= (n/2)+1) {
-    if (n % x == 0)
-      if (x.isPrime)
-        println(x)
-    x = x + 2
+  def largest(n: BigInt, c: BigInt = 0): BigInt = {
+    var x = BigInt(3)
+    while (n%x != 0 && x*x < n)(x += 1)
+    if (x*x < n) largest(n/x,x) else n
   }
+  println(largest(BigInt("600851475143")))
 }
