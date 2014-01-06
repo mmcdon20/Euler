@@ -16,7 +16,7 @@ object Euler037 extends App {
     num1.isPrime && num2.isPrime
   }
   
-  val x = (10 to 1000000).filter(isTruncatablePrime(_)).sum
+  val x = (10 to 1000000).par.filter(isTruncatablePrime(_)).sum
   println(x)
   
 }

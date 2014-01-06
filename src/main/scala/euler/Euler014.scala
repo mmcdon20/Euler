@@ -8,7 +8,7 @@ object Euler014 extends App {
     case n                 => collatz(3*n+1, c+1)
   }
 
-  val n = (1 until 1000000).map(x => (x, collatz(x))).maxBy(_._2)
+  val n = (1 until 1000000).par.map(x => (x, collatz(x))).maxBy(_._2)
   
   println(n)
 }
