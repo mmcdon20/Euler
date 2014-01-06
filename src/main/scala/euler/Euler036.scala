@@ -9,6 +9,6 @@ object Euler036 extends App {
   
   val nums = (1 to 1000000).filter(isDoublePalindrome(_))
   
-  print (nums sum)
+  println (nums sum)
   
 }
