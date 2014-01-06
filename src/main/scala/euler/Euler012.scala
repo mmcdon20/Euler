@@ -1,18 +1,15 @@
 package euler
 
 object Euler012 extends App {
-  
-  def tri(n:Long) = (1L to n).sum 
-  def div(n:Long) = (1L to n).filter(n%_==0L).length 
-  
+
   def divisors(x:Long) = {
     var limit = x
-    var divs = 0L;
+    var divs = 0L
     var i = 1L
     
     while (i <= x) {
       if (x % i == 0L) {
-        limit = x / i;
+        limit = x / i
         if (limit != i) {
           divs += 1L
         }
