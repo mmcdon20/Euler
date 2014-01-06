@@ -10,5 +10,5 @@ object Euler014 extends App {
 
   val n = (1 until 1000000).par.map(x => (x, collatz(x))).maxBy(_._2)
   
-  println(n)
+  println(n._1)
 }
