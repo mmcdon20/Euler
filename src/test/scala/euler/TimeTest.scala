@@ -1,14 +1,15 @@
 import euler._
 import org.junit.Test
+import com.twitter.util.Stopwatch
 
 class TimeTest {
 
   def time(testNumber:Int)(app:App) = {
     println(s"Test $testNumber start")
-    val start = System.currentTimeMillis()
+    val elapsed = Stopwatch.start()
     app.main(Array())
-    val stop = System.currentTimeMillis()
-    println(s"Test $testNumber took ${stop - start} milliseconds.\n")
+    val duration = elapsed().inSeconds
+    println(s"Test $testNumber took $duration seconds.\n")
   }
 
   @Test(timeout=60000) def euler001 = time(1)(Euler001)
