@@ -43,6 +43,7 @@ class TimeTest {
   @Test(timeout=60000) def euler031 = time(31)(Euler031)
   @Test(timeout=60000) def euler032 = time(32)(Euler032)
   @Test(timeout=60000) def euler034 = time(34)(Euler034)
+  @Test(timeout=60000) def euler035 = time(35)(Euler035)
   @Test(timeout=60000) def euler036 = time(36)(Euler036)
   @Test(timeout=60000) def euler037 = time(37)(Euler037)
   @Test(timeout=60000) def euler041 = time(41)(Euler041)
