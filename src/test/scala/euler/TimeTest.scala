@@ -1,8 +1,8 @@
 package euler
 
 import org.junit.{Rule, Test}
-import com.twitter.util.Stopwatch
 import org.junit.rules.Timeout
+import com.twitter.util.Stopwatch
 import java.io.ByteArrayOutputStream
 
 class TimeTest {
@@ -64,6 +64,7 @@ class TimeTest {
   @Test def euler041 = time(41)(Euler041)(7652413)
   @Test def euler042 = time(42)(Euler042)(162)
   @Test def euler043 = time(43)(Euler043)(16695334890L)
+  @Test def euler045 = time(45)(Euler045)(1533776805)
   @Test def euler048 = time(48)(Euler048)(9110846700L)
   @Test def euler050 = time(50)(Euler050)(997651)
   @Test def euler067 = time(67)(Euler067)(7273)
