@@ -1,7 +1,12 @@
 package util
 
 object Common {
-  
+
+  private def sieve(nums: Stream[Int]): Stream[Int] =
+    nums.head #:: sieve(nums.tail.filter(_ % nums.head != 0))
+
+  def primes = 2 #:: sieve(Stream.from(3, 2))
+
   def isPalindrome(n:BigInt):Boolean = n.toString == n.toString.reverse
   def isPalindrome(n:String):Boolean = n == n.reverse
   def factorial(n:BigInt):BigInt = (BigInt(1) to n).product
