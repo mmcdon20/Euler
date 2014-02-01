@@ -56,6 +56,7 @@ class TimeTest {
   @Test def euler030() = time(Euler030)(443839)
   @Test def euler031() = time(Euler031)(73682)
   @Test def euler032() = time(Euler032)(45228)
+  @Test def euler033() = time(Euler033)(100)
   @Test def euler034() = time(Euler034)(40730)
   @Test def euler035() = time(Euler035)(55)
   @Test def euler036() = time(Euler036)(872187)
