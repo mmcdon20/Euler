@@ -8,12 +8,11 @@ import java.io.ByteArrayOutputStream
 class TimeTest {
 
   def time(app: App)(answer: Long) = {
-    val name = app.getClass.getSimpleName
-    println(s"Test $name start")
     val elapsed = Stopwatch.start()
     test(app)(answer)
     val duration = elapsed().inSeconds
-    println(s"Test $name took $duration seconds.\n")
+    val name = app.getClass.getSimpleName
+    println(s"Test $name took $duration seconds.")
   }
 
   def test(app: App)(answer: Long) = {
