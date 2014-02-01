@@ -2,40 +2,17 @@ package euler
 
 object Euler012 extends App {
 
-  def divisors(x:Long) = {
-    var limit = x
-    var divs = 0L
-    var i = 1L
-    
-    while (i <= x) {
-      if (x % i == 0L) {
-        limit = x / i
-        if (limit != i) {
-          divs += 1L
-        }
-        divs += 1L
-      }
-      i += 1L
-    }
-    divs
-  }
-  
-  def triangle(x:Long) = {
-    var sum = 0L
-    var n = 1L
-    
-    while (n <= x) { 
-      sum += n
-      n += 1L
-    }
-    
-    sum
-  }
-  
-  def over500(n:Long):Long = n match {
-    case x if (divisors(triangle(x)) > 500L) => x
-    case x                                   => over500(x+1)
+  def divisors(n: Long, c: Int = 2, i: Int = 2): Int = (n,c,i) match {
+    case _ if i*i <= n =>
+      if (n % i == 0) divisors(n, c+2, i+1)
+      else            divisors(n, c, i+1)
+    case _ => c
   }
 
-  println(over500(1L))
+  val triangles: Stream[Long] =
+    0L #:: triangles.zipWithIndex.map(n => n._1 + n._2)
+
+  val result = triangles.find(divisors(_) > 500)
+
+  println(result.get)
 }
