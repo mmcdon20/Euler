@@ -2,10 +2,12 @@ package util
 
 object Common {
 
-  private def sieve(nums: Stream[Int]): Stream[Int] =
-    nums.head #:: sieve(nums.tail.filter(_ % nums.head != 0))
-
-  def primes = 2 #:: sieve(Stream.from(3, 2))
+  def primes: Stream[Int] = {
+    lazy val ps = 2 #:: sieve(3)
+    def sieve(n: Int): Stream[Int] =
+      n #:: sieve(Stream.from(n+2, 2).find(i=> ps.takeWhile(j => j*j <= i).forall(i % _ > 0)).get)
+    ps
+  }
 
   def isPalindrome(n:BigInt):Boolean = n.toString == n.toString.reverse
   def isPalindrome(n:String):Boolean = n == n.reverse
