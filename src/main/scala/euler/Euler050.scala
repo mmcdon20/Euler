@@ -8,7 +8,7 @@ object Euler050 extends App {
   val primeSet = ps.toSet
 
   val upperLimit =
-    Stream.from(1).find(n => ps.take(n).sum > 1000000).get -1
+    Stream.from(1).find(ps.take(_).sum > 1000000).get -1
 
   def result:Int = {
     for (i <- upperLimit to 1 by -1) yield {
