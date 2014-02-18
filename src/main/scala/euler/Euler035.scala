@@ -10,6 +10,6 @@ object Euler035 extends App {
   def isCircularPrime(n: Int) =
     !rotations(n).exists(!_.isPrime)
 
-  val result = (1 until 1000000).par.count(isCircularPrime(_))
+  val result = (1 until 1000000).par.count(isCircularPrime)
   println(result)
 }

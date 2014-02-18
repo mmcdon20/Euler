@@ -9,7 +9,7 @@ object Euler042 extends App {
   def triangle(n: Int) = (0.5 * n) * (n + 1)
   def value(letter: Char) = letter - 64
 
-  val triStream  = Stream.from(1).map(triangle(_))
+  val triStream  = Stream.from(1).map(triangle)
   val wordValues = words.map(_.foldLeft(0)(_ + value(_)))
 
   val triWords   = wordValues.count { value =>

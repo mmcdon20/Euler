@@ -9,6 +9,6 @@ object Euler037 extends App {
         n.toString.take(i).toInt.isPrime)
     } && n.isPrime
 
-  val x = (10 to 1000000).filter(isTruncatablePrime(_)).sum
+  val x = (10 to 1000000).filter(isTruncatablePrime).sum
   println(x)
 }

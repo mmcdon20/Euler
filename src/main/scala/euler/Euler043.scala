@@ -14,6 +14,6 @@ object Euler043 extends App {
   }
   
   val nums = "1234567890".permutations
-  val result = nums.filter(isSubDivisible(_)).map(BigInt(_)).sum
+  val result = nums.filter(isSubDivisible).map(BigInt(_)).sum
   println(result)
 }

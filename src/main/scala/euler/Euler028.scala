@@ -6,7 +6,7 @@ object Euler028 extends App {
     acc + 4 * size * size - 6 * size + 6
 
   val spiral =
-    (3 to 1001 by 2).foldLeft(1)(compute(_,_))
+    (3 to 1001 by 2).foldLeft(1)(compute)
 
   println(spiral)
 }

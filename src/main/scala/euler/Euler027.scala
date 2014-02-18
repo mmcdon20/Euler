@@ -6,7 +6,7 @@ import scala.math.abs
 object Euler027 extends App {
 
   def formula (a:Int, b:Int, n:Int) =
-    abs((n*n + a*n + b)).isPrime
+    abs(n*n + a*n + b).isPrime
 
   def comboLength(a:Int, b:Int, n:Int = 0): Int =
     if (formula(a,b,n)) comboLength(a,b,n+1)
