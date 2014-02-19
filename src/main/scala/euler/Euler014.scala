@@ -2,13 +2,22 @@ package euler
 
 object Euler014 extends App {
   
-  def collatz(n:BigInt, c:BigInt = 0):BigInt = n match {
-    case n if (n == 1)     => c + 1 
-    case n if (n % 2 == 0) => collatz(n/2, c+1)
-    case n                 => collatz(3*n+1, c+1)
+  def collatz(n: Long, c: Long = 1): Long = n match {
+    case _ if n == 1 =>
+      c
+    case _ if n % 2 == 0 =>
+      val i = (n/2).toInt
+      if (n/2 < limit && sizes(i) != 0) sizes(i) + c
+      else collatz(n/2, c+1)
+    case _ =>
+      val i = (n*3+1).toInt
+      if (n*3+1 < limit && sizes(i) != 0) sizes(i) + c
+      else collatz(n*3+1, c+1)
   }
 
-  val n = (1 until 1000000).par.map(x => (x, collatz(x))).maxBy(_._2)
-  
-  println(n._1)
+  val limit = 1000000
+  val sizes = Array.ofDim[Long](limit)
+  for (i <- 1 until limit) sizes(i) = collatz(i)
+
+  println(sizes.indexOf(sizes.max))
 }
