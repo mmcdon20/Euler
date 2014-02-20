@@ -17,7 +17,7 @@ object Euler027 extends App {
     for (a <- -999 to 999; b <- a to 999)
       yield (comboLength(a,b),a*b)
 
-  val result = combos.par.maxBy(_._1)
+  val result = combos.maxBy(_._1)
 
   println(result._2)
 }
