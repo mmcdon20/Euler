@@ -1,9 +1,7 @@
 package euler
 
-import util.Common._
-
 object Euler025 extends App {
-  def count(n: Int = 1): Int =
-    if (fib(n).toString.length < 1000) count(n+1) else n
-  println(count())
+  val fibs: Stream[BigInt] = BigInt(0) #:: 1 #:: fibs.zip(fibs.tail).map(n => n._1 + n._2)
+  val result = fibs.indexWhere(_.toString.length >= 1000)
+  println(result)
 }
