@@ -1,15 +1,25 @@
 package euler
 
-import util.Implicit._
+import util.Common._
 
 object Euler035 extends App {
-  def rotations(n: Int) =
-    (0 until n.toString.length)
-      .map(i => (n.toString.drop(i) + n.toString.take(i)).toInt)
+  val primeSet = primes.takeWhile(_ < 1000000).toSet
+
+  def rotations(n: Int) = {
+    val s = n.toString
+    (0 until s.length).map(swap(s,_))
+  }
+
+  def swap(s: String, n: Int) = {
+    val (a,b) = s.splitAt(n)
+    (b+a).toInt
+  }
 
   def isCircularPrime(n: Int) =
-    !rotations(n).exists(!_.isPrime)
+    if (n == 2 || n.toString.forall(_.asDigit % 2 == 1))
+      rotations(n).forall(primeSet)
+    else false
 
-  val result = (1 until 1000000).par.count(isCircularPrime)
+  val result = (1 until 1000000).count(isCircularPrime)
   println(result)
 }
