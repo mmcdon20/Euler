@@ -2,12 +2,15 @@ package util
 
 object Common {
 
-  def primes: Stream[Int] = {
+  lazy val primes: Stream[Int] = {
     lazy val ps = 2 #:: sieve(3)
     def sieve(n: Int): Stream[Int] =
       n #:: sieve(Stream.from(n+2, 2).find(i=> ps.takeWhile(j => j*j <= i).forall(i % _ > 0)).get)
     ps
   }
+
+  lazy val fibs: Stream[BigInt] =
+    0 #:: 1 #:: fibs.zip(fibs.tail).map(n => n._1 + n._2)
 
   def isPalindrome(n:BigInt):Boolean = n.toString == n.toString.reverse
   def isPalindrome(n:String):Boolean = n == n.reverse
@@ -29,7 +32,7 @@ object Common {
       return true
     if (n%2==0) 
       return false
-    for (i <- 3 to (Math.sqrt(n).toInt) by 2)
+    for (i <- 3 to Math.sqrt(n).toInt by 2)
       if(n%i==0)
         return false
     true
@@ -42,7 +45,7 @@ object Common {
       return true
     if (n%2==0) 
       return false
-    for (i <- 3 to (Math.sqrt(n.toDouble).toInt) by 2)
+    for (i <- 3 to Math.sqrt(n.toDouble).toInt by 2)
       if(n%i==0)
         return false
     true
@@ -50,8 +53,8 @@ object Common {
   
   def fib(n:BigInt):BigInt = {
     def tail(n:BigInt, b:BigInt, a:BigInt):BigInt = n match {
-      case n if (n == 0) => a 
-      case _                     => tail( n -1, a + b, b)
+      case _ if n == 0 => a
+      case _           => tail(n-1,a+b,b)
     }
     tail(n,1,0)
   }
@@ -64,8 +67,8 @@ object Common {
   }
   
   def trianglePath(triangle:List[Array[scala.math.BigInt]]):BigInt = {
-    var size = triangle.size
-    var grid = Array.ofDim[BigInt](size, size)
+    val size = triangle.size
+    val grid = Array.ofDim[BigInt](size, size)
     for (i <- 0 until size) {
       for (j <- 0 to i) {
         if ( (i,j) == (0,0) ) {
@@ -79,7 +82,7 @@ object Common {
         }
       }
     }
-    grid(size-1) max
+    grid(size-1).max
   }
   
 }
