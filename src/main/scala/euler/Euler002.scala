@@ -1,13 +1,8 @@
 package euler
 
-import util.Implicit._
+import util.Common._
 
 object Euler002 extends App {
-  val fibs = (1 to 35)
-    .map(_.fib)
-    .filter(_ % 2 == 0)
-    .filter(_ <= 4000000)
-    .sum
-  
-  println (fibs)
+  val result = fibs.takeWhile(_ <= 4000000).filter(_ % 2 == 0).sum
+  println(result)
 }
