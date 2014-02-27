@@ -1,18 +1,14 @@
 package euler
 
 import scala.io.Source
+import scala.util.Try
 
 object Euler011 extends App {
   val file = Source.fromFile("src/main/resources/11.txt").getLines()
   val grid:List[Array[Int]] = file.toList.map(_.split(" ").map(_.toInt))
 
-  def get(x:Int, y:Int) =
-    try {
-      grid(y)(x)
-    } catch { 
-      case _:Exception => 0 
-    }
-  
+  def get(x:Int, y:Int) = Try(grid(y)(x)).getOrElse(0)
+
   def findHor(x:Int, y:Int) = (0 to 3).map(i => get(x+i,y+0)).product
   def findVer(x:Int, y:Int) = (0 to 3).map(i => get(x+0,y+i)).product
   def findDi1(x:Int, y:Int) = (0 to 3).map(i => get(x+i,y+i)).product
