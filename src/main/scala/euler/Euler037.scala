@@ -1,14 +1,14 @@
 package euler
 
-import util.Implicit._
+import util.Common._
 
 object Euler037 extends App {
-  def isTruncatablePrime(n: Int): Boolean =
-    !(1 until n.toString.length).exists { i =>
-      !(n.toString.drop(i).toInt.isPrime &&
-        n.toString.take(i).toInt.isPrime)
-    } && n.isPrime
+  val primeList = primes.takeWhile(_ < 1000000).toList
+  val primeSet = primeList.toSet
 
-  val x = (10 to 1000000).filter(isTruncatablePrime).sum
-  println(x)
+  def isTruncatablePrime(n: Int)(s: String = n.toString) =
+    (1 until s.length).forall(i => primeSet(s.drop(i).toInt) && primeSet(s.take(i).toInt))
+
+  val result = primeList.dropWhile(_ < 10).filter(isTruncatablePrime(_)( )).sum
+  println(result)
 }
