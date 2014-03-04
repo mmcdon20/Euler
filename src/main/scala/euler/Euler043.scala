@@ -1,19 +1,38 @@
 package euler
 
 object Euler043 extends App {
-  
-  def isSubDivisible(s:String) = {
-    if      (s.substring(1, 4).toInt %  2 != 0) false
-    else if (s.substring(2, 5).toInt %  3 != 0) false
-    else if (s.substring(3, 6).toInt %  5 != 0) false
-    else if (s.substring(4, 7).toInt %  7 != 0) false
-    else if (s.substring(5, 8).toInt % 11 != 0) false
-    else if (s.substring(6, 9).toInt % 13 != 0) false
-    else if (s.substring(7,10).toInt % 17 != 0) false
-    else                                         true
-  }
-  
-  val nums = "1234567890".permutations
-  val result = nums.filter(isSubDivisible).map(BigInt(_)).sum
-  println(result)
+
+  def submod(a: Int, b: Int, c: Int, d: Int) =
+    distinct(a,b,c) && (a*100+b*10+c) % d == 0
+
+  def distinct(a: Int, b: Int, c: Int) =
+    a != b && b != c && c != a
+
+  val digits = 0 to 9
+  var total = 0L
+
+  for {
+    b <- digits
+    c <- digits
+    d <- digits
+    if submod(b,c,d,2)
+    e <- digits
+    if submod(c,d,e,3)
+    f <- digits
+    if submod(d,e,f,5)
+    g <- digits
+    if submod(e,f,g,7)
+    h <- digits
+    if submod(f,g,h,11)
+    i <- digits
+    if submod(g,h,i,13)
+    j <- digits
+    if submod(h,i,j,17)
+    a <- digits
+    str = ""+a+b+c+d+e+f+g+h+i+j
+    if str.distinct.size == 10
+    num = str.toLong
+  } total += num
+
+  println(total)
 }
