@@ -2,14 +2,18 @@ package euler
 
 object Euler039 extends App {
 
-  val triangles = for {
-      p <- 1 to 1000
-      a <- 1 to p
-      b <- 1 to p-a
-      if a*a + b*b == (p-a-b)*(p-a-b)
-    } yield p
+  def triple(m: Int, n: Int, k: Int) =
+    k*(m*m-n*n) + k*(2*m*n) + k*(m*m+n*n)
 
-  val result = triangles.map(t => (t, triangles.count(_ == t))).maxBy(_._2)
+  val perms = for {
+    m <- 1   to 22
+    n <- 1   to m-1
+    k <- m+1 to 82
+    perimeter = triple(m,n,k)
+    if perimeter <= 1000
+  } yield perimeter
 
-  println(result._1)
+  val result = perms.groupBy(n => n).maxBy(_._2.length)._1
+
+  println(result)
 }
