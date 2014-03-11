@@ -10,7 +10,8 @@ object Euler017 extends App {
     6 -> "Six",
     7 -> "Seven",
     8 -> "Eight",
-    9 -> "Nine")
+    9 -> "Nine"
+  ).mapValues(_.length)
   val teens = Map(
     1 -> "Eleven",
     2 -> "Twelve",
@@ -20,7 +21,8 @@ object Euler017 extends App {
     6 -> "Sixteen",
     7 -> "Seventeen",
     8 -> "Eighteen",
-    9 -> "Nineteen")
+    9 -> "Nineteen"
+  ).mapValues(_.length)
   val tens = Map(
     1 -> "Ten",
     2 -> "Twenty",
@@ -30,7 +32,8 @@ object Euler017 extends App {
     6 -> "Sixty",
     7 -> "Seventy",
     8 -> "Eighty",
-    9 -> "Ninety")
+    9 -> "Ninety"
+  ).mapValues(_.length)
   val hundreds = Map(
     1 -> "OneHundred",
     2 -> "TwoHundred",
@@ -40,7 +43,8 @@ object Euler017 extends App {
     6 -> "SixHundred",
     7 -> "SevenHundred",
     8 -> "EightHundred",
-    9 -> "NineHundred")
+    9 -> "NineHundred"
+  ).mapValues(_.length)
   val thousands = Map(
     1 -> "OneThousand",
     2 -> "TwoThousand",
@@ -50,32 +54,20 @@ object Euler017 extends App {
     6 -> "SixThousand",
     7 -> "SevenThousand",
     8 -> "EightThousand",
-    9 -> "NineThousand")
-  
-  def getNumber(n:Int):String = n match {
-    case x if (x.toString.length == 1) => 
-      ones(x)
-    case x if (x.toString.length == 2) => 
-      if (x > 10 && x < 20)
-        teens(x.toString.drop(1).toInt)
-      else if (x.toString.endsWith("0"))
-        tens(x.toString.take(1).toInt)
-      else 
-        tens(x.toString.take(1).toInt) + 
-          getNumber(x.toString.drop(1).toInt)
-    case x if (x.toString.length == 3) => 
-      if (x.toString.endsWith("00"))
-        hundreds(x.toString.take(1).toInt)
-      else
-        hundreds(x.toString.take(1).toInt) +
-          "And" + getNumber(x.toString.drop(1).toInt)
-    case x if (x.toString.length == 4) =>
-      if (x.toString.endsWith("000"))
-        thousands(x.toString.take(1).toInt)
-      else 
-        ""
+    9 -> "NineThousand"
+  ).mapValues(_.length)
+
+  def getNumber(n: Int): Int = n match {
+    case _ if n < 10                      => ones(n)
+    case _ if n < 100 && n > 10 && n < 20 => teens(n%10)
+    case _ if n < 100 && n % 10 == 0      => tens(n/10)
+    case _ if n < 100                     => tens(n/10) + getNumber(n%10)
+    case _ if n < 1000 && n % 100 == 0    => hundreds(n/100)
+    case _ if n < 1000                    => hundreds(n/100) + "And".length + getNumber(n%100)
+    case _ if n < 10000 && n % 1000 == 0  => thousands(n/1000)
+    case _                                => ???
   }
-  
-  val answer = (1 to 1000).map(getNumber(_).length).sum
+
+  val answer = (1 to 1000).map(getNumber).sum
   println(answer)
 }
