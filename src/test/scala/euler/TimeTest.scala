@@ -10,9 +10,9 @@ class TimeTest {
   def time(app: App, answer: Long) = {
     val elapsed = Stopwatch.start()
     test(app, answer)
-    val duration = elapsed().inSeconds
+    val duration = elapsed().inMillis / 1000.0
     val name = app.getClass.getSimpleName
-    println(s"Test $name took $duration seconds.")
+    println(s"$name took $duration seconds.")
   }
 
   def test(app: App, answer: Long) = {
