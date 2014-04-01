@@ -1,12 +1,20 @@
 package euler
 
 object Euler023 extends App {
-  def properDivisorSum(n: Int) = (1 to n/2).filter(n % _ == 0).sum
-  def isAbundant(n: Int) = properDivisorSum(n) > n
+  def divisorSum(n: Int) = {
+    (2 to Math.sqrt(n).toInt).foldLeft(1) { (sum, element) =>
+      if (n % element == 0)
+        sum + element + (if (n/element == element) 0 else n/element)
+      else
+        sum
+    }
+  }
+
+  def isAbundant(n: Int) = divisorSum(n) > n
 
   val range    = Array.range(1,28123)
   val items    = scala.collection.mutable.Set[Int]() ++= range
-  val abundant = range.par.filter(isAbundant)
+  val abundant = range.filter(isAbundant)
   val length   = abundant.length
 
   for {
