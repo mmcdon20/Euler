@@ -17,6 +17,8 @@ object Common {
   def factorial(n:BigInt):BigInt = (BigInt(1) to n).product
   def getDigits(n:BigInt) = n.toString.toCharArray.map(BigInt(_) - 48)
   def toBinary(n:BigInt) = Integer.toBinaryString(n.toInt)
+  def gcd(a: Long, b: Long): Long = if (b==0) a.abs else gcd(b,a%b)
+  def lcm(a: Long, b: Long) = (a*b).abs/gcd(a,b)
   
   def isPandigit(n:String,l:Int) = {
     val isLength = n.length == l
