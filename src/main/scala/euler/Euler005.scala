@@ -1,11 +1,8 @@
 package euler
 
-object Euler005 extends App {
-  val range = 11 to 19
+import util.Common._
 
-  def findDivisible(n: Int = 20): Int =
-    if (range.forall(n%_ == 0)) n
-    else findDivisible(n+20)
-    
-  println(findDivisible())
+object Euler005 extends App {
+  val result = (1 to 20).foldLeft(1L)(lcm(_,_))
+  println(result)
 }
